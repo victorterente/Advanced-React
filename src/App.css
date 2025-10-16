@@ -40,3 +40,69 @@
 .read-the-docs {
   color: #888;
 }
+/* Overlay covers the whole screen and darkens background */
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+/* The Alert dialog box */
+.Alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 12px;
+  padding: 24px 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  z-index: 101;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Heading and paragraph styling */
+.Alert h4 {
+  margin-top: 0;
+  color: #d32f2f;
+}
+
+.Alert p {
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+/* Optional button styling */
+.Alert button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.Alert button:hover {
+  opacity: 0.9;
+}
+
+/* Simple fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
