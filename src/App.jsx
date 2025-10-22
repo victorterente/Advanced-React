@@ -1,40 +1,21 @@
 import "./App.css";
+import { useState } from "react";
+import { RadioGroup, RadioOption } from "./Radio/Radio";
 
-const Alert = ({ children }) => {
+function App() {
+  const [selected, setSelected] = useState("");
   return (
-    <>
-      <div className="Overlay" />
-      <div className="Alert">{children}</div>
-    </>
-  );
-};
-const Button = ({ children, backgroundColor }) => {
-  return <button style={{ backgroundColor }}> {children}</button>;
-};
-
-const DeleteButton = () => {
-  return (
-    <div>
-      <Button backgroundColor="red"> Delete</Button>
+    <div className="App">
+      <h2>How did you hear about little Lemon?</h2>
+      <RadioGroup onChange={setSelected} selected={selected}>
+        <RadioOption value={"Social_Media"}>Social Media</RadioOption>
+        <RadioOption value={"friends"}>Friends</RadioOption>
+        <RadioOption value={"advertising"}>Advertising</RadioOption>
+        <RadioOption value={"other"}>Other</RadioOption>
+      </RadioGroup>
+      <button disabled={!selected}>Submit</button>
     </div>
   );
-};
-
-export default function App() {
-  return (
-    <>
-      <div className="App">
-        <header>Little Lemon Restaurant:</header>
-      </div>
-
-      <Alert>
-        <h4>Delete Account</h4>
-        <p>
-          Are you sure you want to proceed? You will miss all your delicious
-          recipes!
-        </p>
-        <DeleteButton />
-      </Alert>
-    </>
-  );
 }
+
+export default App;
