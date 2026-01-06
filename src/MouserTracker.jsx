@@ -23,7 +23,6 @@ const WithMousePosition = (WrappedComponent) => {
     return <WrappedComponent {...props} mousePosition={mousePosition} />;
   }
 
-  // ⭐ ADD THIS — fixes the ESLint warning
   WithMousePositionComponent.displayName = `WithMousePosition(${WrappedComponent.name})`;
 
   return WithMousePositionComponent;
